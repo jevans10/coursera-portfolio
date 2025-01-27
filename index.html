@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src="styles.css"></ref>
+    <title>python for everybody portfolo</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Welcome to my course documentation for the Coursera specialization "Programming for Everybody"</h1>
+            <p>I highly recommend those interested take this course</p>
+            <p>https://online.umich.edu/series/python-for-everybody/</p>
+        </section>
+        <aside>
+            <h2>Code:</h2>
+            <h3>Python for Everybody</h3>
+            <ul>
+                <li><a href="#3.3">A program that converts scores to grades</a></li>
+                <li><a href="#4.6">A program that computes gross pay</a></li>
+                <li><a href="#5.2">A program that prints the largest of numbers entered</a></li>
+            </ul>
+            <h3>Python Data Structures</h3>
+            <ul>
+                <li><a href="#6.5">A program that reads a file and extracts numbers from it</a></li>
+                <li><a href="#7.1">A program that reads a file and then prints the file in uppercase</a></li>
+                <li><a href="#7.2">A program that averages a set of numbers it finds in a file</a></li>
+                <li><a href="#8.4">A program that takes all of the unique words in a file and prints them out in alphabetical order</a></li>
+                <li><a href="#8.5">A program that opens a file and counts the number of times a line begins with a specific word</a></li>
+                <li><a href="#9.4">A program that calculates the most prolific email sender based on data from a file</a></li>
+                <li><a href="#10.2">A program that counts the number of times an email was sent per hour of the day</a></li>
+            </ul>
+        </aside>
+        <section>
+            <h3 id="3.3">#3.3 A program that converts scores to grades </h3>
+            <code><pre>
+                score = float(input("Enter Score: "))
+                if score >= 0.9:
+                    print("A")
+                elif score >= 0.8:
+                    print("B")
+                elif score >= 0.7:
+                    print("C")
+                elif score >= 0.6:
+                    print("D")
+                elif score < 0.6:
+                    print("F")
+                else:
+                    print("this score is out of range")</pre></code>
+            <h3 id="4.6">#4.6 A program that computes gross pay </h3>
+            <pre><code>
+                hours = float(input("how many hours did you work?"))
+                rate = float(input("what is your rate of pay?"))
+                
+                def computepay(h, r):
+                    if h > 40:
+                        overtime_rate = r * 1.5
+                        extra_hours = h - 40
+                        normal_hours = h - extra_hours
+                        pay = (overtime_rate * extra_hours) + (normal_hours * r)
+                        print("Pay", pay)
+                    else:
+                        print("Pay", h * r)
+                    return
+                
+                computepay(hours, rate)
+                    </code></pre>
+            <h3 id="5.2">#5.2 A program that prints the largest of numbers entered </h3>
+            <pre><code>
+                largest = None
+                smallest = None
+                
+                while True:
+                    num = input("Enter a number: ")
+                    if num.lower() == "done":
+                        print("Maximum is", largest)
+                        print("Minimum is", smallest)
+                        break
+                    try:
+                        num = int(num)
+                        largest = num if largest is None or num > largest else largest
+                        smallest = num if smallest is None or num < smallest else smallest
+                    except ValueError:
+                        print("Invalid input")
+                    </code></pre>
+            <h3 id="6.5">#6.5 A program that reads a file and extracts numbers from it </h3>
+            <pre><code>
+                *uses <a href="mbox-short.txt">mbox-short.txt</a>*
+                text = "X-DSPAM-Confidence:    0.8475"
+                start = text.find("0")
+                end = text.find("5")
+                print(float(text[23:29]))</code></pre>
+            <h3 id="7.1">#7.1 A program that reads a file and then prints the file in uppercase </h3>
+            <pre><code>
+                *uses <a href="words.txt">words.txt</a>*
+                fname = input("Enter file name: ")
+                fh = open(fname)
+                for line in fh:
+                    print((line.upper()).strip())</code></pre>
+            <h3 id="7.2">#7.2 A program that averages a set of numbers it finds in a file </h3>
+            <pre><code>
+                *uses <a href="mbox-short.txt">mbox-short.txt</a>*
+                fname = input("Enter file name: ")
+                fh = open(fname)
+                x = 0
+                value = 0
+                for line in fh:
+                    if not line.startswith("X-DSPAM-Confidence:"):
+                        continue
+                    else:
+                        x = x + 1
+                        value = value + float(line[20:26])
+                average = value / x
+                print("Average spam confidence:", average)</code></pre>
+            <h3 id="8.4">#8.4 A program that takes all of the unique words in a file and prints them out in alphabetical order </h3>
+            <pre><code>
+                *uses <a href="romeo.txt">romeo.txt</a>*
+                fname = input("Enter file name: ")
+                fh = open(fname)
+                list = list()
+                
+                for line in fh:
+                    lines = line.split()
+                    for word in lines:
+                        if word not in list:
+                            list.append(word)
+                list.sort()
+                print(list)</code></pre>
+            <h3 id="8.5">#8.5 A program that opens a file and counts the number of times a line begins with a specific word </h3>
+            <pre><code>
+                *uses <a href="mbox-short.txt">mbox-short.txt</a>*
+                fname = input("Enter file name: ")
+                if len(fname) < 1:
+                    fname = "mbox-short.txt"
+
+                fh = open(fname)
+                count = 0
+
+                for line in fh:
+                    if line.startswith("From "):
+                        new_line = line.split()
+                        print(new_line[1])
+                        count = count + 1
+
+                print("There were", count, "lines in the file with From as the first word")
+            </code></pre>
+            <h3 id="9.4">#9.4 A program that calculates the most prolific email sender based on data from a file </h3>
+            <pre><code>
+                *uses <a href="mbox-short.txt">mbox-short.txt</a>*
+                name = input("Enter file:")
+                if len(name) < 1:
+                    name = "mbox-short.txt"
+                file = open(name)
+                dictionary = {}
+                emails = []
+
+                big_number = 0
+                big_word = None
+
+                count = 0
+                for line in file:
+                    if line.startswith("From "):
+                        lines_of_from = line.split()
+                        emails.append(lines_of_from[1])
+                    
+                for email in emails:
+                    dictionary[email] = dictionary.get(email, 0) + 1
+                    
+                for key in dictionary:
+                    if dictionary[key] > big_number or big_number == None:
+                        big_number = dictionary[key]
+                        big_word = key
+
+                print(big_word, big_number)
+            </code></pre>
+            <h3 id="10.2">#10.2 A program that counts the number of times an email was sent per hour of the day </h3>
+            <pre><code>
+                *uses <a href="mbox-short.txt">mbox-short.txt</a>*
+                name = input("Enter file:")
+                if len(name) < 1:
+                name = "mbox-short.txt"
+                file = open(name)
+
+                times = []
+                hours = []
+                dictionary_of_hours = {}
+
+
+                for line in file:
+                if line.startswith("From "):
+                    from_lines = line.split()
+                    times.append(from_lines[5])
+                    
+                for time in times:
+                hhmmss = time.split(":")
+                hours.append(hhmmss[0])
+
+                hours.sort()
+                
+                for hour in hours:
+                dictionary_of_hours[hour] = dictionary_of_hours.get(hour, 0) + 1
+
+                for key, value in dictionary_of_hours.items():
+                print(key, value)
+            </code></pre>
+        </section>
+
+    </main>
+</body>
+</html>
