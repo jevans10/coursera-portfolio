@@ -1,0 +1,99 @@
+@font-face {
+    font-family: raleway;
+    src: url(/fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf);
+    src: url(/fonts/Raleway/Raleway-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: raleway;
+    padding: 2.5%;
+}
+
+h1, h2 {
+    text-transform: uppercase;;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.index {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+}
+
+.index h1 , .index p{
+    background-color: white;
+    padding: 5px;
+}
+
+aside {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    width: 25vw;
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+
+nav ul {
+    gap: 1vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 0 !important;
+    list-style: none;
+}
+
+header img {
+    width: 2.5rem;
+    vertical-align: middle;
+}
+
+header p {
+    font-size: 2.5vh;
+}
+
+.skip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skip:focus{
+    display: contents;
+}
+
+img {
+    border: 1px solid black;
+    padding: auto;
+    border-radius: 5%;
+}
+
+nav li:hover {
+    background-color: pink;
+    color: white;
+}
+
+.garden{
+    display: grid;
+    grid-template-columns: 5vw 5vw;
+}
+.garden img {
+    height: 7.5vh;
+}
+
+.garden img:nth-child(even){
+    border: 2px solid pink;
+}

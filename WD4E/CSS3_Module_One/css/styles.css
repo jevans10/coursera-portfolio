@@ -1,0 +1,62 @@
+@font-face {
+    font-family: playright;
+    src: url(/fonts/Playwrite_IN/PlaywriteIN-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.5em;
+    background-image: linear-gradient(palevioletred, pink);
+}
+
+header {
+    background-color: pink;
+}
+
+.header-image { 
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+nav {
+    background-color: palevioletred;
+    color: white;
+}
+
+main {
+    background-color: palegoldenrod;
+    font-size: 2em;
+}
+
+footer {
+    background-color: palevioletred;
+}
+
+li {
+    display: inline;
+    width: 100vw;
+    list-style: none;
+    margin: 0 10vw;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-family: playright;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+p {
+    line-height: 10vh;
+}
+
+.photo-library {
+    display: flex;
+    justify-content: center;
+}

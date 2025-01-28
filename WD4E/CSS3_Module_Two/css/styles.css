@@ -1,0 +1,89 @@
+@font-face {
+    font-family: playright;
+    src: url(/fonts/Playwrite_IN/PlaywriteIN-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.5em;
+    background-image: linear-gradient(palevioletred, pink);
+}
+
+header {
+    background-color: pink;
+}
+
+.header-image { 
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+nav {
+    background-color: palevioletred;
+    color: white;
+    display: inline-block;
+    width: 80%;
+}
+
+nav img {
+    width: 10%;
+}
+
+main {
+    background-color: palegoldenrod;
+    font-size: 2em;
+}
+
+footer {
+    background-color: palevioletred;
+}
+
+li {
+    /* display: inline;
+    width: 100vw;
+    list-style: none;
+    margin: 0 10vw; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-family: playright;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+p {
+    line-height: 10vh;
+}
+
+.grid {
+    /* display: flex; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    column-gap: 1rem;
+    row-gap: .5rem;
+    align-items: center;
+}
+
+.grid img {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.flex img {
+    width: 17%;
+}
